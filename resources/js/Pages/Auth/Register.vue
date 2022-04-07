@@ -13,6 +13,7 @@ const form = useForm({
     email: '',
     password: '',
     password_confirmation: '',
+    age: '',
     terms: false,
 });
 
@@ -79,6 +80,18 @@ const submit = () => {
                     class="mt-1 block w-full"
                     required
                     autocomplete="new-password"
+                />
+            </div>
+
+            <div class="mt-4">
+                <JetLabel for="age" value="Age" />
+                <JetInput
+                    id="age"
+                    v-model="form.age"
+                    type="number"
+                    class="mt-1 block w-full"
+                    required
+                    autocomplete="age"
                 />
             </div>
 
