@@ -33,3 +33,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('/wrong-age', function () {
+    return Inertia::render('Auth/WrongAge');
+})->name('auth.wrong-age');
