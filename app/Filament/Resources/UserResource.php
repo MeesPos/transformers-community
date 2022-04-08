@@ -17,6 +17,10 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?string $label = 'Gebruiker';
+
+    protected static ?string $pluralLabel = 'Gebruikers';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -31,11 +35,11 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('username'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('birth_date')->date('d-m-Y'),
-                Tables\Columns\BooleanColumn::make('is_admin'),
-                Tables\Columns\BooleanColumn::make('is_blocked')
+                Tables\Columns\TextColumn::make('username')->label('Gebruikersnaam'),
+                Tables\Columns\TextColumn::make('email')->label('E-mailadres'),
+                Tables\Columns\TextColumn::make('birth_date')->date('d-m-Y')->label('Geboortedatum'),
+                Tables\Columns\BooleanColumn::make('is_admin')->label('Beheerder'),
+                Tables\Columns\BooleanColumn::make('is_blocked')->label('Geblokkeerd')
             ])
             ->filters([
                 //
