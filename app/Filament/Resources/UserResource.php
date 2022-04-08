@@ -21,7 +21,9 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('Username'),
+                Forms\Components\TextInput::make('Email'),
+
             ]);
     }
 
@@ -29,7 +31,10 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('username'),
+                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('birth_date')->date('d-m-Y'),
+                Tables\Columns\BooleanColumn::make('is_admin')
             ])
             ->filters([
                 //
@@ -48,6 +53,7 @@ class UserResource extends Resource
         return [
             'index' => Pages\ListUsers::route('/'),
             'create' => Pages\CreateUser::route('/create'),
+            'view' => Pages\ViewUser::route('/view'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
