@@ -34,7 +34,8 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('username'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('birth_date')->date('d-m-Y'),
-                Tables\Columns\BooleanColumn::make('is_admin')
+                Tables\Columns\BooleanColumn::make('is_admin'),
+                Tables\Columns\BooleanColumn::make('is_blocked')
             ])
             ->filters([
                 //
