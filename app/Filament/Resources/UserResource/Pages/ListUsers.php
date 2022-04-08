@@ -21,11 +21,19 @@ class ListUsers extends ListRecords
                     $this->blockUser($record, true);
                 }))
                 ->requiresConfirmation()
+                ->deselectRecordsAfterCompletion(),
+
+            BulkAction::make('deblock_users')
+                ->label('Deblokkeer gebruikers')
+                ->action(fn (Collection $records) => $records->map(function ($record) {
+                    $this->blockUser($record, false);
+                }))
+                ->requiresConfirmation()
                 ->deselectRecordsAfterCompletion()
         ];
     }
 
-    public function blockUser($record, bool $block)
+    public function blockUser($record, bool $block): int
     {
         return User::query()
             ->where('id', $record->id)
