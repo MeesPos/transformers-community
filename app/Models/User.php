@@ -72,6 +72,11 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
         return (bool) $this->is_admin === true;
     }
 
+    /**
+     * Configuring the name attribute
+     *
+     * @return string
+     */
     public function getFilamentName(): string
     {
         return $this->username;
