@@ -81,4 +81,18 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
     {
         return $this->username;
     }
+
+    /**
+     * Get the default profile photo URL if no profile photo has been uploaded.
+     *
+     * @return string
+     */
+    protected function defaultProfilePhotoUrl(): string
+    {
+        $username = trim(collect(explode(' ', $this->username))->map(function ($segment) {
+            return mb_substr($segment, 0, 1);
+        })->join(' '));
+
+        return 'https://ui-avatars.com/api/?name='.urlencode($username).'&color=7F9CF5&background=EBF4FF';
+    }
 }
