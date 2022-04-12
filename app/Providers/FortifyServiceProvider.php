@@ -33,7 +33,7 @@ class FortifyServiceProvider extends ServiceProvider
                 if (($age < 16) || ($age > 27)) {
                     Auth::user()->delete();
 
-                    return Redirect::route('auth.wrong-age');
+                    return Redirect::route('auth.wrong-age', ['problem' => $age < 16 ? 'too_young' : 'too_old']);
                 }
 
                 return Redirect::route('dashboard');
