@@ -17,7 +17,8 @@ module.exports = {
             colors: {
                 brand: {
                     orange: '#F3B16A',
-                    purple: '#8070E8'
+                    purple: '#8070E8',
+                    aqua: '#C2EFE1'
                 }
             }
         },
