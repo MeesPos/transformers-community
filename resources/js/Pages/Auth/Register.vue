@@ -27,16 +27,14 @@
                     username: '',
                     email: '',
                     password: '',
-                    password_confirmation: '',
-                    birth_date: '',
-                    terms: false,
+                    birth_date: ''
                 })
             }
         },
         methods: {
             submit() {
-                form.post(route('register'), {
-                    onFinish: () => form.reset('password', 'password_confirmation'),
+                this.form.post(this.route('register'), {
+                    onFinish: () => this.form.reset('password'),
                 });
             }
         },
@@ -49,6 +47,8 @@
         <h2 class="text-6xl text-brand-purple">Aanmelden</h2>
 
         <p class="mt-10">Welkom bij Transformers Community. Vul hieronder al je levens in en maak snel je account aan.</p>
+
+        <JetValidationErrors class="mt-6" />
 
         <form @submit.prevent="submit">
             <table class="w-full" style="border-spacing: 0 32px; border-collapse: separate">
