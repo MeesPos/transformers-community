@@ -30,9 +30,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/wrong-age', function () {
-    return Inertia::render('Auth/WrongAge');
-})->name('auth.wrong-age');
+Route::get('/wrong-age/{status}/{email}/{birth_date}', [\App\Http\Controllers\WrongAgeController::class, 'index'])->name('auth.wrong-age');
 
 Route::get('email-sent', function () {
     return Inertia::render('Auth/EmailSent', [

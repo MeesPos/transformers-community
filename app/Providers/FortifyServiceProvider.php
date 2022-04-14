@@ -31,9 +31,15 @@ class FortifyServiceProvider extends ServiceProvider
                 $age = Carbon::create(Auth::user()->birth_date)->diff(Carbon::now())->y;
 
                 if (($age < 16) || ($age > 27)) {
+                    $user = Auth::user();
+
                     Auth::user()->delete();
 
-                    return Redirect::route('auth.wrong-age', ['problem' => $age < 16 ? 'too_young' : 'too_old']);
+                    return Redirect::route('auth.wrong-age', [
+                        'status' => $age < 16 ? 'too_young' : 'too_old',
+                        'email' => $user->email,
+                        'birth_date' => $user->birth_date
+                    ]);
                 }
 
                 return Redirect::route('dashboard');

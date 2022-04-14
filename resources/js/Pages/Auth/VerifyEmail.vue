@@ -35,15 +35,15 @@ export default {
 
         <table class="w-full mt-8" style="border-spacing: 0 32px; border-collapse: separate">
             <tbody>
-            <tr>
-                <td>
-                    <p class="font-bold">E-mailadres</p>
-                </td>
+                <tr>
+                    <td>
+                        <p class="font-bold">E-mailadres</p>
+                    </td>
 
-                <td>
-                    {{ $page.props.user.email }}
-                </td>
-            </tr>
+                    <td>
+                        {{ $page.props.user.email }}
+                    </td>
+                </tr>
             </tbody>
         </table>
 
