@@ -23,7 +23,7 @@
                     </nav>
 
                     <div class="relative z-10 inline-flex items-center space-x-12 lg:ml-5 lg:justify-end">
-                        <a href="#_" x-data="{ hover: false }"
+                        <a href="/login" x-data="{ hover: false }"
                            class="relative inline-block text-base font-bold text-brand-purple transition duration-150 ease white">
                             <span class="block">Log in</span>
                             <span class="absolute bottom-0 left-0 inline-block w-full h-1 -mb-2 overflow-hidden">
