@@ -42,7 +42,7 @@
             </section>
         </nav>
 
-        <section class="grid grid-cols-2">
+        <section class="grid grid-cols-2 items-center">
             <div>
                 <slot/>
             </div>
