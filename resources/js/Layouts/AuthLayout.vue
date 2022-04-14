@@ -97,7 +97,7 @@ export default {
                 {
                     image: '/images/slides/2.png',
                     title: 'Eenzaamheid onder jongeren',
-                    description: 'In een kleine documentaire word vertelt over de eenzaamheid onder jongeren. Wil je de hele documentaire zien, meld je dan snel aan voor Transformers Community.<br><br>'
+                    description: 'In een kleine documentaire word vertelt over de eenzaamheid onder jongeren. Wil je de hele documentaire zien, meld je dan snel aan voor Transformers Community.<br><br><br>'
                 },
                 {
                     image: '/images/slides/3.png',
