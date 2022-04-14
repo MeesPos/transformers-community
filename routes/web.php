@@ -33,3 +33,7 @@ Route::middleware([
 Route::get('/wrong-age', function () {
     return Inertia::render('Auth/WrongAge');
 })->name('auth.wrong-age');
+
+Route::get('email-sent', function () {
+    return Inertia::render('Auth/EmailSent');
+})->name('auth.email-sent');
