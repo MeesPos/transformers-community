@@ -29,7 +29,9 @@ export default {
     methods: {
         submit() {
             this.form.post(this.route('password.email'), {
-                onSuccess: () => this.$inertia.get('/email-sent')
+                onSuccess: () => this.$inertia.get('/email-sent', {
+                    'email': this.form.email
+                })
             });
         }
     },
@@ -44,7 +46,7 @@ export default {
         <p class="mt-10">Wachtwoord vergeten? Geen probleem! Vul hier onder het e-mail adres in waar al eerder mee heeft in gelogd.</p>
 
         <JetValidationErrors class="mt-6" />
-        
+
         <form @submit.prevent="submit">
             <table class="w-full" style="border-spacing: 0 32px; border-collapse: separate">
                 <tbody>

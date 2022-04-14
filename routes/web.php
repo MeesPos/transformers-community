@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -35,5 +35,7 @@ Route::get('/wrong-age', function () {
 })->name('auth.wrong-age');
 
 Route::get('email-sent', function () {
-    return Inertia::render('Auth/EmailSent');
+    return Inertia::render('Auth/EmailSent', [
+        'email' => request()->email
+    ]);
 })->name('auth.email-sent');
