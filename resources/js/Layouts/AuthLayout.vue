@@ -48,13 +48,13 @@
             </div>
 
             <div>
-                <Carousel class="w-1/2 mx-auto">
+                <Carousel class="w-3/4 mx-auto mr-0">
                     <Slide v-for="(slide, index) in slides" :key="index">
                         <div class="grid grid-rows-[auto_1fr]">
                             <div>
                                 <img :src="slide.image"
                                      :alt="slide.title"
-                                     class="rounded-3xl"
+                                     class="rounded-3xl w-full"
                                 />
                             </div>
 
@@ -64,7 +64,7 @@
                                 />
 
                                 <p class="mt-12 text-left"
-                                   v-text="slide.description"
+                                   v-html="slide.description"
                                 />
                             </div>
                         </div>
@@ -90,19 +90,19 @@ export default {
         return {
             slides: [
                 {
-                    image: 'https://customerfirst.nl/__uuid/de178c9c-9e09-49c0-b084-106fbab97b6b/onzeker.jpg',
-                    title: 'Onzekerheid, wat nu',
-                    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus !qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id q!'
+                    image: '/images/slides/1.png',
+                    title: 'Ik voel mij verdomt alleen',
+                    description: 'In deze story vertelt Amber hoe ze zich soms voelt en hoe ze er mee om gaat. ‘Ik heb diep van binnen de overtuiging dat ik alles alleen moet doen’. Ze geeft tips hoe ze hier mee omgaat. Benieuwd naar de hele story? Maak snel een account aan. Of heb je al een account? Log dan snel in.'
                 },
                 {
-                    image: 'https://customerfirst.nl/__uuid/de178c9c-9e09-49c0-b084-106fbab97b6b/onzeker.jpg',
-                    title: 'Life sucks sometimes',
-                    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus !qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id q!'
+                    image: '/images/slides/2.png',
+                    title: 'Eenzaamheid onder jongeren',
+                    description: 'In een kleine documentaire word vertelt over de eenzaamheid onder jongeren. Wil je de hele documentaire zien, meld je dan snel aan voor Transformers Community.<br><br>'
                 },
                 {
-                    image: 'https://customerfirst.nl/__uuid/de178c9c-9e09-49c0-b084-106fbab97b6b/onzeker.jpg',
-                    title: 'Je staat er niet alleen voor',
-                    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus !qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id q!'
+                    image: '/images/slides/3.png',
+                    title: 'Waarom moet ik perfect zijn',
+                    description: 'Tegenwoordig krijg je als student best wel het gevoel dat alles perfect moet zijn. Alleen maar goede cijfers, meer dan 100% geven. In deze story vertelt Sam meer over perfectie onder student en hoe hij zich daar bij voelt.<br><br>'
                 }
             ],
             navigationItems: [
@@ -142,7 +142,7 @@ export default {
 
     .carousel__prev, .carousel__next{
         top: 98%!important;
-        background: black!important;
+        background: #4D8CF0!important;
     }
 
     .carousel__pagination{
@@ -157,6 +157,7 @@ export default {
     }
 
     .carousel__pagination-button--active{
-        background: #3E3E3E;
+        background: #29D5D7;
+        /*background: #3E3E3E;*/
     }
 </style>

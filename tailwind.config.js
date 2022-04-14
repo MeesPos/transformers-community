@@ -18,7 +18,9 @@ module.exports = {
                 brand: {
                     orange: '#F3B16A',
                     purple: '#8070E8',
-                    aqua: '#C2EFE1'
+                    aqua: '#C2EFE1',
+                    blue: '#29D5D7',
+                    'dark-blue': '#4D8CF0'
                 }
             }
         },
