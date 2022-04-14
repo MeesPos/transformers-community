@@ -1,13 +1,13 @@
 <template>
-    <div class="w-[90vw] mx-auto font-montserrat">
+    <div class="sm:w-[90vw] mx-auto font-montserrat">
         <nav>
             <section class="relative w-full text-gray-700 bg-white my-4 body-font">
-                <div class="flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-[90vw]">
+                <div class="flex flex-col flex-wrap items-center justify-between py-5 mx-auto lg:flex-row sm:max-w-[90vw]">
                     <a href="#_" class="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none">
                         <img src="/images/logo.png" class="w-48" />
                     </a>
 
-                    <nav class="top-0 left-0 z-0 flex items-center justify-center w-full h-full py-5 -ml-0 space-x-12 text-base md:-ml-5 md:py-0 md:absolute">
+                    <nav class="top-0 left-0 z-0 xs:flex items-center justify-center w-full h-full py-5 -ml-0 xs:space-x-12 text-base lg:-ml-5 lg:py-0 lg:absolute grid grid-cols-2 w-[90vw] xs:w-full">
                         <a v-for="(navigationItem, index) in navigationItems"
                            :key="index"
                            :href="navigationItem.href"
@@ -22,7 +22,7 @@
                         </a>
                     </nav>
 
-                    <div class="relative z-10 inline-flex items-center space-x-12 md:ml-5 lg:justify-end">
+                    <div class="relative z-10 inline-flex items-center space-x-12 lg:ml-5 lg:justify-end">
                         <a href="#_" x-data="{ hover: false }"
                            class="relative inline-block text-base font-bold text-brand-purple transition duration-150 ease white">
                             <span class="block">Log in</span>
@@ -42,13 +42,13 @@
             </section>
         </nav>
 
-        <section class="grid grid-cols-2 items-center">
+        <section class="grid sm:grid-cols-2 items-center">
             <div>
                 <slot/>
             </div>
 
             <div>
-                <Carousel class="w-3/4 mx-auto mr-0">
+                <Carousel class="w-3/4 mx-auto sm:mr-0 mt-12 sm:mt-0">
                     <Slide v-for="(slide, index) in slides" :key="index">
                         <div class="grid grid-rows-[auto_1fr]">
                             <div>

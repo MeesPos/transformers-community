@@ -22,6 +22,9 @@ module.exports = {
                     blue: '#29D5D7',
                     'dark-blue': '#4D8CF0'
                 }
+            },
+            screens: {
+                'xs': '498px'
             }
         },
     },
