@@ -109,11 +109,11 @@ export default {
                     Help
                 </JetButton>
 
-                <a :href="route('password.request')">
+                <Link :href="route('password.request')">
                     <JetButton type="button">
                         Wachtwoord vergeten
                     </JetButton>
-                </a>
+                </Link>
             </div>
         </form>
     </div>
