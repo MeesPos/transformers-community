@@ -55,7 +55,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <JetLabel for="username" value="Username"/>
+                            <JetLabel for="username" value="Gebruikersnaam"/>
                         </td>
 
                         <td>
@@ -73,7 +73,7 @@
 
                     <tr>
                         <td>
-                            <JetLabel for="email" value="Email"/>
+                            <JetLabel for="email" value="E-mailadres"/>
                         </td>
 
                         <td>
@@ -89,7 +89,7 @@
 
                     <tr>
                         <td>
-                            <JetLabel for="password" value="Password"/>
+                            <JetLabel for="password" value="Wachtwoord"/>
                         </td>
 
                         <td>
@@ -106,7 +106,7 @@
 
                     <tr>
                         <td>
-                            <JetLabel for="birth_date" value="Birth date"/>
+                            <JetLabel for="birth_date" value="Geboortedatum"/>
                         </td>
 
                         <td>
