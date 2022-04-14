@@ -20,7 +20,8 @@ module.exports = {
                     purple: '#8070E8',
                     aqua: '#C2EFE1',
                     blue: '#29D5D7',
-                    'dark-blue': '#4D8CF0'
+                    'dark-blue': '#4D8CF0',
+                    pink: '#CF8FF8'
                 }
             },
             screens: {
