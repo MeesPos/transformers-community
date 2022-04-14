@@ -3,12 +3,12 @@
         <nav>
             <section class="relative w-full text-gray-700 bg-white my-4 body-font">
                 <div class="flex flex-col flex-wrap items-center justify-between py-5 mx-auto lg:flex-row sm:max-w-[90vw]">
-                    <a href="#_" class="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none">
+                    <Link href="#_" class="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none">
                         <img src="/images/logo.png" class="w-48" />
-                    </a>
+                    </Link>
 
                     <nav class="top-0 left-0 z-0 xs:flex items-center justify-center w-full h-full py-5 -ml-0 xs:space-x-12 text-base lg:-ml-5 lg:py-0 lg:absolute grid grid-cols-2 w-[90vw] xs:w-full">
-                        <a v-for="(navigationItem, index) in navigationItems"
+                        <Link v-for="(navigationItem, index) in navigationItems"
                            :key="index"
                            :href="navigationItem.href"
                            class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-brand-purple"
@@ -19,11 +19,11 @@
                                 v-text="navigationItem.title"
                             />
                             <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden"></span>
-                        </a>
+                        </Link>
                     </nav>
 
                     <div class="relative z-10 inline-flex items-center space-x-12 lg:ml-5 lg:justify-end">
-                        <a href="/login" x-data="{ hover: false }"
+                        <Link href="/login" x-data="{ hover: false }"
                            class="relative inline-block text-base font-bold text-brand-purple transition duration-150 ease white">
                             <span class="block">Log in</span>
                             <span class="absolute bottom-0 left-0 inline-block w-full h-1 -mb-2 overflow-hidden">
@@ -31,11 +31,11 @@
                             </span>
                             <span class="absolute bottom-0 left-0 inline-block w-full h-1 -mb-2 overflow-hidden">
                             </span>
-                        </a>
+                        </Link>
                         <span class="inline-flex rounded-md shadow-sm">
-                <a href="#" class="inline-flex items-center font-bold text-sm justify-center px-16 py-3 text-base font-medium leading-6 text-white whitespace-no-wrap hover:bg-brand-purple bg-brand-orange rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">
+                <Link href="/register" class="inline-flex items-center font-bold text-sm justify-center px-16 py-3 text-base font-medium leading-6 text-white whitespace-no-wrap hover:bg-brand-purple bg-brand-orange rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">
                     Aanmelden
-                </a>
+                </Link>
             </span>
                     </div>
                 </div>
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
 import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 
@@ -129,7 +130,8 @@ export default {
         Carousel,
         Navigation,
         Pagination,
-        Slide
+        Slide,
+        Link
     }
 }
 </script>
