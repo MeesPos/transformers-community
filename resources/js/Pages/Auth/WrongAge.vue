@@ -29,7 +29,7 @@
         </table>
 
         <div class="grid grid-cols-3 gap-8 items-center justify-end mt-8">
-            <Link :href="route('login')">
+            <Link :href="route('register')">
                 <JetButton type="button">
                     Terug
                 </JetButton>
