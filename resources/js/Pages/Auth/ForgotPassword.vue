@@ -41,7 +41,7 @@ export default {
 
 <template>
     <div class="w-[80%] mx-auto sm:ml-0">
-        <h2 class="text-6xl text-brand-purple">Wachtwoord vergeten</h2>
+        <h2 class="text-7xl text-brand-purple font-lalezar">Wachtwoord vergeten</h2>
 
         <p class="mt-10">Wachtwoord vergeten? Geen probleem! Vul hier onder het e-mail adres in waar al eerder mee heeft in gelogd.</p>
 

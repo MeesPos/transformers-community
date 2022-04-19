@@ -1,7 +1,7 @@
 <template>
     <div class="w-[80%] mx-auto sm:ml-0">
-        <h2 class="text-6xl text-brand-purple" v-show="status === 'too_old'">Helaas u bent te oud</h2>
-        <h2 class="text-6xl text-brand-purple" v-show="status === 'too_young'">Helaas u bent te jong</h2>
+        <h2 class="text-7xl text-brand-purple font-lalezar" v-show="status === 'too_old'">Helaas u bent te oud</h2>
+        <h2 class="text-7xl text-brand-purple font-lalezar" v-show="status === 'too_young'">Helaas u bent te jong</h2>
 
         <p class="mt-10">Helaas kunt u niet mee doen aan Transformers Community. De geboorte datum dat u bij ons heeft opgeven valt niet ben de juiste leeftijd categorie.  Voor verder informatie kunt u contact met ons opnemen.</p>
 

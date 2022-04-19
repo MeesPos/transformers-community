@@ -29,7 +29,7 @@ export default {
 
 <template>
     <div class="w-[80%] mx-auto sm:ml-0">
-        <h2 class="text-5xl text-brand-purple">Welkom bij Transformers Community</h2>
+        <h2 class="text-6xl text-brand-purple font-lalezar">Welkom bij Transformers Community</h2>
 
         <p class="mt-10">Vul hier onder je gevens in om in te loggen op het platform. Heeft u nog geen account via het menu kunt u een account aanmaken.</p>
 

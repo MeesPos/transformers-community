@@ -1,6 +1,6 @@
 <template>
     <div class="w-[80%] mx-auto sm:ml-0">
-        <h2 class="text-6xl text-brand-purple">E-mail is verstuurd!</h2>
+        <h2 class="text-7xl text-brand-purple font-lalezar">E-mail is verstuurd!</h2>
 
         <p class="mt-10">E-mail is verstuurd! Check je mail waar je met een link het wachtwoord kunt veranderen.</p>
 

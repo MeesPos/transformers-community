@@ -44,7 +44,7 @@
 
 <template>
     <div class="w-[80%] mx-auto sm:ml-0">
-        <h2 class="text-6xl text-brand-purple">Aanmelden</h2>
+        <h2 class="text-7xl text-brand-purple font-lalezar">Aanmelden</h2>
 
         <p class="mt-10">Welkom bij Transformers Community. Vul hieronder al je levens in en maak snel je account aan.</p>
 
