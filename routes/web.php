@@ -37,3 +37,9 @@ Route::get('email-sent', function () {
         'email' => request()->email
     ]);
 })->name('auth.email-sent');
+
+Route::prefix('dashboard')->middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified', 'is_not_blocked'])->group(function () {
+    Route::get('chat', [\App\Http\Controllers\ChatsController::class, 'index'])->name('chats.index');
+    Route::get('messages', [\App\Http\Controllers\ChatsController::class, 'fetchMessages'])->name('chats.fetch');
+    Route::post('messages', [\App\Http\Controllers\ChatsController::class, 'sendMessage'])->name('chats.send-message');
+});

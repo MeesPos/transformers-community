@@ -95,4 +95,9 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
 
         return 'https://ui-avatars.com/api/?name='.urlencode($username).'&color=7F9CF5&background=EBF4FF';
     }
+
+    public function messages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Message::class);
+    }
 }
