@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="grid grid-cols-6">
         <div>
             <ChatRoomSelection v-if="currentRoom.id"
                 :rooms="chatRooms"
@@ -8,10 +8,12 @@
             />
         </div>
 
-        <MessageContainer :messages="messages" />
-        <InputMessage :room="currentRoom"
-            v-on:messagesent="getMessages"
-        />
+        <div class="col-span-5">
+            <MessageContainer :messages="messages" />
+            <InputMessage :room="currentRoom"
+                v-on:messagesent="getMessages"
+            />
+        </div>
     </div>
 </template>
 
@@ -63,6 +65,8 @@ export default {
             axios.get('/chat/rooms')
                 .then(response => {
                     this.chatRooms = response.data;
+
+                    console.log(this.chatRooms);
 
                     this.setRoom(response.data[0]);
                 })

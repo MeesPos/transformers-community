@@ -95,4 +95,9 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser, Has
 
         return 'https://ui-avatars.com/api/?name='.urlencode($username).'&color=7F9CF5&background=EBF4FF';
     }
+
+    public function rooms()
+    {
+        return $this->belongsToMany(ChatRoom::class, 'chat_room_users', 'user_id', 'room_id');
+    }
 }
