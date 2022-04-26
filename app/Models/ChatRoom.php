@@ -15,4 +15,9 @@ class ChatRoom extends Model
     {
         return $this->hasMany(ChatMessage::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'chat_room_users', 'room_id', 'user_id');
+    }
 }

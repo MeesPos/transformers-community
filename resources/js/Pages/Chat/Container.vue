@@ -47,6 +47,7 @@ export default {
     },
     methods: {
         connect() {
+            console.log(this.currentRoom);
             if (this.currentRoom.id) {
                 let vm = this;
 
@@ -66,7 +67,7 @@ export default {
                 .then(response => {
                     this.chatRooms = response.data;
 
-                    console.log(this.chatRooms);
+                    console.log(response.data);
 
                     this.setRoom(response.data[0]);
                 })

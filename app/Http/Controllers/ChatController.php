@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ChatRoomCollection;
+use App\Http\Resources\ChatRoomResource;
 use App\Models\ChatMessage;
 use App\Models\ChatRoom;
 use App\Models\ChatRoomUser;
@@ -12,11 +14,14 @@ use App\Events\NewChatMessage;
 
 class ChatController extends Controller
 {
-    public function rooms(Request $request): \Illuminate\Database\Eloquent\Collection
+    public function rooms(Request $request): ChatRoomCollection
     {
-        return Auth::user()
+        return ChatRoomCollection::make(
+            Auth::user()
             ->rooms()
-            ->get();
+            ->with('users')
+            ->get()
+        );
     }
 
     public function messages(Request $request, $roomId): \Illuminate\Database\Eloquent\Collection|array
