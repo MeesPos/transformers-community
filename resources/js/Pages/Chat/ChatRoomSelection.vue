@@ -5,6 +5,8 @@
                 type="text"
                 @input.prevent="search($event)"
                 placeholder="Zoeken..."
+                ref="searchInput"
+                v-model="searchQuery"
             />
         </div>
 
@@ -16,22 +18,20 @@
             >
                 {{ searchResult.username }}
             </div>
-        </div>
 
-        <div>
-            <select
-                v-model="selected"
-                @change="$emit('roomchanged', selected)"
-                class="float-right"
+            <div v-show="noResults === true">
+                <p>Geen resultaten!</p>
+            </div>
+
+            <div
+                v-for="(room, index) in rooms"
+                :key="index"
+                @click="$emit('roomchanged', room)"
+                class="cursor-pointer"
+                v-show="searchQuery === ''"
             >
-                <option
-                    v-for="(room, index) in rooms"
-                    :key="index"
-                    :value="room"
-                >
-                    {{ room.name }}
-                </option>
-            </select>
+                {{ room.users.other.username }}
+            </div>
         </div>
     </div>
 </template>
@@ -50,30 +50,40 @@ export default {
     data() {
         return {
             selected: '',
-            searchResults: []
+            searchResults: [],
+            searchQuery: '',
+            noResults: false
         }
     },
     created() {
+        console.log(this.searchResults);
+
         this.selected = this.currentRoom;
     },
     methods: {
         search(event) {
+            if (event.target.value === '') {
+                this.noResults = false;
+
+                return this.searchResults = [];
+            }
+
             axios.post('/search/' + event.target.value)
                 .then(response => {
                     this.searchResults = response.data;
 
-                    console.log(this.searchResults);
+                    if (this.searchResults.length === 0) {
+                        this.noResults = true;
+                    }
                 })
                 .catch(error => {
-                    console.log(error.data);
+                    console.log(error);
                 })
         },
         createRoom(selectedUser) {
             axios.post('/rooms/create/' + selectedUser.id)
                 .then(response => {
                     this.$emit('roomchanged', response.data);
-
-                    console.log(response.data);
                 })
                 .catch(error => {
                     console.log(error);

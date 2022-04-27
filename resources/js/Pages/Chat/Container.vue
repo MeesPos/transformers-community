@@ -47,7 +47,6 @@ export default {
     },
     methods: {
         connect() {
-            console.log(this.currentRoom);
             if (this.currentRoom.id) {
                 let vm = this;
 

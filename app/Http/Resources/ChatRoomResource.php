@@ -12,7 +12,21 @@ class ChatRoomResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'users' => $this->users
+            'users' => [
+                'self' => Auth::user(),
+                'other' => $this->findObjectByOtherId(Auth::id())
+            ]
         ];
+    }
+
+    public function findObjectByOtherId($id)
+    {
+        foreach ($this->users as $user) {
+            if ($user->id != $id) {
+                return $user;
+            }
+        }
+
+        return false;
     }
 }
