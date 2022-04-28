@@ -15,8 +15,17 @@
                 v-for="searchResult in searchResults"
                 :key="searchResult.id"
                 @click.prevent="createRoom(searchResult)"
+                class="flex flex-row items-center gap-4"
             >
-                {{ searchResult.username }}
+                <div>
+                    <img class="w-12 h-12 rounded-full"
+                         :src="searchResult.profile_photo_url"
+                    />
+                </div>
+
+                <div>
+                    <p class="font-medium" v-text="searchResult.username" />
+                </div>
             </div>
 
             <div v-show="noResults === true">
