@@ -47,3 +47,4 @@ Route::middleware('auth:sanctum')->get('chat/room/{roomId}/messages', [\App\Http
 Route::middleware('auth:sanctum')->post('chat/room/{roomId}/message', [\App\Http\Controllers\ChatController::class, 'newMessage']);
 Route::middleware('auth:sanctum')->post('search/{query}', [\App\Http\Controllers\SearchController::class, 'search']);
 Route::middleware('auth:sanctum')->post('rooms/create/{userId}', [\App\Http\Controllers\ChatController::class, 'createRoom']);
+Route::middleware('auth:sanctum')->get('profile-picture', [\App\Http\Controllers\ProfilePictureController::class, 'index']);
