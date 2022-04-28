@@ -8,7 +8,7 @@
             />
         </div>
 
-        <div class="col-span-5">
+        <div class="col-span-5 h-full">
             <MessageContainer :messages="messages" />
             <InputMessage :room="currentRoom"
                 v-on:messagesent="getMessages"
