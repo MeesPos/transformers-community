@@ -71,7 +71,7 @@ export default {
                     this.setRoom(response.data[0]);
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.log(error.response.data);
                 })
         },
         setRoom(room) {
