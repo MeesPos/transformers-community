@@ -100,8 +100,22 @@ export default {
                 .then(response => {
                     this.searchResults = response.data;
 
+                    this.searchResults.forEach(searchResult => {
+                        if (this.rooms.some(room => room.users.other.username === searchResult.username)) {
+                            let index = this.searchResults.indexOf(searchResult);
+
+                            if (index === 0) {
+                                this.searchResults.shift();
+                            }
+
+                            this.searchResults.splice(index, 1);
+                        }
+                    })
+
                     if (this.searchResults.length === 0) {
                         this.noResults = true;
+                    } else {
+                        this.noResults = false;
                     }
                 })
                 .catch(error => {
