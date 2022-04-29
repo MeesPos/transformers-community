@@ -112,11 +112,7 @@ export default {
                         }
                     })
 
-                    if (this.searchResults.length === 0) {
-                        this.noResults = true;
-                    } else {
-                        this.noResults = false;
-                    }
+                    this.noResults = this.searchResults.length === 0;
                 })
                 .catch(error => {
                     console.log(error);
