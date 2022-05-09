@@ -14,13 +14,13 @@
                     <HomeIcon class="h-auto w-8 text-brand-orange" />
                 </div>
 
-                <div>
+                <Link href="/chat">
                     <ChatAlt2Icon class="h-auto w-8 text-brand-orange" />
-                </div>
+                </Link>
 
-                <div>
+                <Link href="/profile">
                     <UserCircleIcon class="h-auto w-8 text-brand-orange" />
-                </div>
+                </Link>
             </div>
 
             <div class="self-end flex flex-col mx-auto gap-8 text-center mb-8">
@@ -99,6 +99,7 @@
 </template>
 
 <script>
+import { Link } from "@inertiajs/inertia-vue3";
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { UserCircleIcon, CogIcon, HomeIcon, ChatAlt2Icon } from '@heroicons/vue/solid'
 
@@ -115,7 +116,8 @@ export default {
         ChatAlt2Icon,
         UserCircleIcon,
         CogIcon,
-        XIcon
+        XIcon,
+        Link
     }
 }
 </script>

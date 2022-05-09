@@ -47,6 +47,6 @@ Route::middleware('auth:sanctum')->get('chat/room/{roomId}/messages', [\App\Http
 Route::middleware('auth:sanctum')->post('chat/room/{roomId}/message', [\App\Http\Controllers\ChatController::class, 'newMessage']);
 Route::middleware('auth:sanctum')->post('search/{query}', [\App\Http\Controllers\SearchController::class, 'search']);
 Route::middleware('auth:sanctum')->post('rooms/create/{userId}', [\App\Http\Controllers\ChatController::class, 'createRoom']);
-Route::middleware('auth:sanctum')->get('profile-picture', [\App\Http\Controllers\ProfilePictureController::class, 'index']);
+Route::middleware('auth:sanctum')->get('profile', [\App\Http\Controllers\ProfilePictureController::class, 'index']);
 Route::middleware('auth:sanctum')->post('profile-picture/delete', [\App\Http\Controllers\ProfilePictureController::class, 'delete'])->name('profile-picture.delete');
 Route::middleware('auth:sanctum')->post('profile-picture/upload', [\App\Http\Controllers\ProfilePictureController::class, 'upload'])->name('profile-picture.upload');
