@@ -1,8 +1,12 @@
 <template>
-    <div class="grid grid-cols-[auto,1fr] overflow-y-hidden">
-        <div class="grid grid-rows-2 text-center shadow-2xl h-screen w-24">
+    <div class="grid grid-cols-[auto,1fr] overflow-y-hidden relative">
+        <div class="grid grid-rows-2 text-center shadow-2xl h-screen w-24"
+             v-show="expand === false"
+        >
             <div class="flex flex-col gap-8 mx-auto">
-                <div class="mt-10">
+                <div class="mt-10"
+                     @click="expand = true"
+                >
                     <MenuIcon class="h-auto w-8" />
                 </div>
 
@@ -35,9 +39,13 @@
             </div>
         </div>
 
-        <div class="grid grid-rows-2 text-center shadow-2xl h-screen w-96">
+        <div class="grid grid-rows-2 text-center shadow-2xl h-screen w-96 z-50 bg-white"
+             v-show="expand === true"
+        >
             <div class="flex flex-col gap-8 ml-8">
-                <div class="mt-10">
+                <div class="mt-10"
+                     @click="expand = false"
+                >
                     <XIcon class="h-auto w-8" />
                 </div>
 
@@ -82,6 +90,10 @@
             </div>
         </div>
 
+        <div class="absolute left-0 right-0 bg-gray-50 opacity-25 w-screen h-screen z-10"
+             v-show="expand === true"
+        />
+
         <slot />
     </div>
 </template>
@@ -92,6 +104,11 @@ import { UserCircleIcon, CogIcon, HomeIcon, ChatAlt2Icon } from '@heroicons/vue/
 
 export default {
     name: "DashboardLayout",
+    data() {
+        return {
+            expand: false
+        }
+    },
     components: {
         HomeIcon,
         MenuIcon,
