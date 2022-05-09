@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-5">
-        <div class="w-96 border-r-2 border-brand-purple">
+        <div class="w-96 border-r-2 border-brand-pink">
             <ChatRoomSelection v-if="currentRoom.id"
                 :rooms="chatRooms"
                 :currentRoom="currentRoom"
