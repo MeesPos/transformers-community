@@ -100,8 +100,6 @@ export default {
         }
     },
     created() {
-        console.log(this.searchResults);
-
         this.selected = this.currentRoom;
     },
     methods: {
