@@ -23,7 +23,8 @@ module.exports = {
                     'dark-blue': '#4D8CF0',
                     pink: '#CF8FF8',
                     'gray-chat': '#E2E2E2',
-                    'gray-input-chat': '#EFEDED'
+                    'gray-input-chat': '#EFEDED',
+                    'light-gray': '#B9B6B6'
                 }
             },
             screens: {

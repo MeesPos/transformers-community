@@ -1,34 +1,41 @@
 <template>
-    <div>
-        <div>
+    <div class="pr-8">
+        <h2 class="font-lalezar text-brand-purple text-5xl mt-8 mb-4 pl-8">Berichten</h2>
+
+        <div class="pl-8">
             <input
                 type="text"
                 @input.prevent="search($event)"
                 placeholder="Zoeken..."
                 ref="searchInput"
                 v-model="searchQuery"
+                class="rounded-md bg-brand-gray-chat border-none w-full text-lg"
             />
         </div>
 
-        <div>
+        <div class="pl-8 w-full">
             <div
                 v-for="searchResult in searchResults"
                 :key="searchResult.id"
                 @click.prevent="createRoom(searchResult)"
-                class="flex flex-row items-center gap-4 cursor-pointer"
+                class="flex flex-row items-center gap-4 my-8 cursor-pointer w-full"
             >
                 <div>
-                    <img class="w-12 h-12 rounded-full"
+                    <img class="w-12 h-auto rounded-full"
                          :src="searchResult.profile_photo_url"
                     />
                 </div>
 
                 <div>
-                    <p class="font-medium" v-text="searchResult.username" />
+                    <p class="font-medium text-md"
+                       v-text="searchResult.username"
+                    />
                 </div>
             </div>
 
-            <div v-show="noResults === true">
+            <div class="mt-8"
+                 v-show="noResults === true"
+            >
                 <p>Geen resultaten!</p>
             </div>
 
@@ -36,25 +43,34 @@
                 v-for="(room, index) in rooms"
                 :key="index"
                 @click="$emit('roomchanged', room)"
-                class="flex flex-row items-center gap-4 cursor-pointer"
+                class="flex flex-row items-center gap-4 my-8 cursor-pointer w-full"
                 v-show="searchQuery === ''"
             >
                 <div>
-                    <img class="w-12 h-12 rounded-full"
+                    <img class="w-16 h-auto rounded-full"
                          :src="room.users.other.profile_photo_url"
+                         :alt="room.users.other.username"
                     />
                 </div>
 
-                <div>
-                    <div class="flex flex-row gap-8">
-                        <p class="font-medium" v-text="room.users.other.username" />
+                <div class="w-full">
+                    <div class="grid grid-cols-[auto,1fr] gap-8 w-full">
+                        <p class="font-medium text-md"
+                           v-text="room.users.other.username"
+                        />
 
-                        <p class="text-right" v-if="moment(room.last_message.created_at).isBefore(moment().subtract(1, 'd'))" v-text="moment(room.last_message.created_at).format('D MMM')" />
+                        <p class="text-right text-brand-light-gray"
+                           v-if="moment(room.last_message.created_at).isBefore(moment().subtract(1, 'd'))"
+                           v-text="moment(room.last_message.created_at).format('D MMM')"
+                        />
 
-                        <p class="text-right" v-else v-text="moment(room.last_message.created_at).format('HH:mm')"></p>
+                        <p class="text-right text-brand-light-gray"
+                           v-else
+                           v-text="moment(room.last_message.created_at).format('HH:mm')"
+                        />
                     </div>
 
-                    <p v-text="room.last_message.message.substring(0, 20) + '...'" />
+                    <p class="text-sm" v-text="room.last_message.message.substring(0, 30) + '...'" />
                 </div>
             </div>
         </div>
