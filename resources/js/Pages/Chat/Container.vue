@@ -9,6 +9,19 @@
         </div>
 
         <div class="col-span-4 h-full w-4/5 mx-auto">
+            <div v-if="currentRoom.users" class="grid grid-cols-2 items-center my-12">
+                <div class="flex flex-row gap-12 items-center">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                         :src="currentRoom.users.other.profile_photo_url"
+                    />
+
+                    <h2 class="font-lalezar text-brand-purple text-4xl" v-text="currentRoom.users.other.username" />
+                </div>
+
+                <div>
+                    <InformationCircleIcon class="w-6 h-6 float-right text-brand-aqua" />
+                </div>
+            </div>
             <MessageContainer :messages="messages" />
             <InputMessage :room="currentRoom"
                 v-on:messagesent="getMessages"
@@ -22,13 +35,15 @@ import MessageContainer from "./MessageContainer";
 import InputMessage from "./InputMessage";
 import ChatRoomSelection from "./ChatRoomSelection";
 import DashboardLayout from "../../Layouts/DashboardLayout";
+import { InformationCircleIcon } from '@heroicons/vue/solid'
 
 export default {
     name: "Container",
     components: {
         MessageContainer,
         InputMessage,
-        ChatRoomSelection
+        ChatRoomSelection,
+        InformationCircleIcon
     },
     layout: DashboardLayout,
     data() {
