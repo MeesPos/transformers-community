@@ -1,27 +1,26 @@
 <template>
-    <div class="relative h-10 m-1">
-        <div style="border-top: 1px solid #e6e6e6;" class="grid grid-cols-6">
-            <input
-                type="text"
+    <div class="relative h-[52px] mt-24">
+        <div class="flex gap-6 items-center h-[52px]">
+            <input type="text"
                 v-model="message"
                 @keyup.enter="sendMessage()"
                 placeholder="Say something..."
-                class="col-span-5 outline-none p-1"
+                class="w-full outline-none h-[52px] bg-brand-gray-input-chat border-none rounded-md text-lg pl-8 text-black"
             />
 
-            <button
+            <img
+                src="/images/send-icon.png"
                 @click="sendMessage()"
-                class="place-self-end bg-gray-500 hover:bg-blue-700 p-1 mt-1 rounded text-white"
-            >
-                Send
-            </button>
+                class="h-[60%] mt-[11px]"
+                alt="Send icon"
+            />
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Container",
+    name: "InputMessage",
     props: {
         room: {
             required: true

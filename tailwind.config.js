@@ -21,7 +21,9 @@ module.exports = {
                     aqua: '#C2EFE1',
                     blue: '#29D5D7',
                     'dark-blue': '#4D8CF0',
-                    pink: '#CF8FF8'
+                    pink: '#CF8FF8',
+                    'gray-chat': '#E2E2E2',
+                    'gray-input-chat': '#EFEDED'
                 }
             },
             screens: {

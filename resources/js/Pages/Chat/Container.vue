@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-cols-6">
-        <div>
+    <div class="grid grid-cols-5">
+        <div class="w-full">
             <ChatRoomSelection v-if="currentRoom.id"
                 :rooms="chatRooms"
                 :currentRoom="currentRoom"
@@ -8,7 +8,7 @@
             />
         </div>
 
-        <div class="col-span-5 h-full">
+        <div class="col-span-4 h-full w-4/5 mx-auto">
             <MessageContainer :messages="messages" />
             <InputMessage :room="currentRoom"
                 v-on:messagesent="getMessages"
