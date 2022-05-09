@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-[45%]"
+    <div class="max-w-md"
          :class="$page.props.user.username === message.user.username ? 'float-right' : ''"
     >
         <div class="flex flex-row gap-4 items-center"

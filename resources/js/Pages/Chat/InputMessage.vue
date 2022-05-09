@@ -1,10 +1,10 @@
 <template>
-    <div class="relative h-[52px] mt-24">
+    <div class="relative h-[52px] mt-12">
         <div class="flex gap-6 items-center h-[52px]">
             <input type="text"
                 v-model="message"
                 @keyup.enter="sendMessage()"
-                placeholder="Say something..."
+                placeholder="Typ jouw bericht"
                 class="w-full outline-none h-[52px] bg-brand-gray-input-chat border-none rounded-md text-lg pl-8 text-black"
             />
 
