@@ -1,14 +1,13 @@
 <template>
     <div class="grid grid-cols-5">
         <div class="w-96 border-r-2 border-brand-pink">
-            <ChatRoomSelection v-if="currentRoom.id"
-                :rooms="chatRooms"
+            <ChatRoomSelection :rooms="chatRooms"
                 :currentRoom="currentRoom"
                 v-on:roomchanged="setRoom($event)"
             />
         </div>
 
-        <div class="col-span-4 h-full w-4/5 mx-auto">
+        <div class="col-span-4 h-full w-4/5 mx-auto" v-if="currentRoom !== undefined">
             <div v-if="currentRoom.users" class="grid grid-cols-2 items-center my-12">
                 <div class="flex flex-row gap-12 items-center">
                     <img class="w-12 h-12 rounded-full object-cover"
@@ -55,7 +54,7 @@ export default {
     },
     watch: {
         currentRoom(val, oldVal) {
-            if (oldVal.id) {
+            if (oldVal && oldVal.id) {
                 this.disconnect(oldVal);
             }
 
@@ -64,7 +63,8 @@ export default {
     },
     methods: {
         connect() {
-            if (this.currentRoom.id) {
+            console.log(this.currentRoom);
+            if (this.currentRoom && this.currentRoom.id) {
                 let vm = this;
 
                 this.getMessages();

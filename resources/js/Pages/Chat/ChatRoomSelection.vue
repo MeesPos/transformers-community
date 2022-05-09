@@ -60,17 +60,20 @@
                         />
 
                         <p class="text-right text-brand-light-gray"
-                           v-if="moment(room.last_message.created_at).isBefore(moment().subtract(1, 'd'))"
+                           v-if="room.last_message !== null && moment(room.last_message.created_at).isBefore(moment().subtract(1, 'd'))"
                            v-text="moment(room.last_message.created_at).format('D MMM')"
                         />
 
                         <p class="text-right text-brand-light-gray"
-                           v-else
+                           v-else-if="room.last_message !== null"
                            v-text="moment(room.last_message.created_at).format('HH:mm')"
                         />
                     </div>
 
-                    <p class="text-sm" v-text="room.last_message.message.substring(0, 30) + '...'" />
+                    <p class="text-sm"
+                       v-if="room.last_message !== null"
+                       v-text="room.last_message.message.substring(0, 30) + '...'"
+                    />
                 </div>
             </div>
         </div>
@@ -100,6 +103,7 @@ export default {
         }
     },
     created() {
+        console.log(this.currentRoom, 'dasda');
         this.selected = this.currentRoom;
     },
     methods: {
@@ -136,6 +140,8 @@ export default {
             axios.post('/rooms/create/' + selectedUser.id)
                 .then(response => {
                     this.$emit('roomchanged', response.data);
+
+                    location.reload();
                 })
                 .catch(error => {
                     console.log(error);
