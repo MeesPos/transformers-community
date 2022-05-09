@@ -21,6 +21,7 @@
 import MessageContainer from "./MessageContainer";
 import InputMessage from "./InputMessage";
 import ChatRoomSelection from "./ChatRoomSelection";
+import DashboardLayout from "../../Layouts/DashboardLayout";
 
 export default {
     name: "Container",
@@ -29,6 +30,7 @@ export default {
         InputMessage,
         ChatRoomSelection
     },
+    layout: DashboardLayout,
     data() {
         return {
             chatRooms: [],
