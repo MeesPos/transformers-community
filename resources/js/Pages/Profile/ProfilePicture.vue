@@ -38,6 +38,12 @@
                 />
             </div>
         </div>
+
+        <div class="mt-16 px-8 mr-[32px]">
+            <h2>Je naam</h2>
+
+            <h2 class="text-center font-bold text-xl" v-text="$page.props.user.username" />
+        </div>
     </div>
 </template>
 
