@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'is_not_blocked' => \App\Http\Middleware\AbortIfUserIsBlocked::class
+        'is_not_blocked' => \App\Http\Middleware\AbortIfUserIsBlocked::class,
+        'completed_onboarding' => \App\Http\Middleware\RedirectToOnboardingWhenNotCompleted::class
     ];
 }
