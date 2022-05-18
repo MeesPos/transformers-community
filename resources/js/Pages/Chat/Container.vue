@@ -63,7 +63,6 @@ export default {
     },
     methods: {
         connect() {
-            console.log(this.currentRoom);
             if (this.currentRoom && this.currentRoom.id) {
                 let vm = this;
 
@@ -83,12 +82,10 @@ export default {
                 .then(response => {
                     this.chatRooms = response.data;
 
-                    console.log(response.data);
-
                     this.setRoom(response.data[0]);
                 })
                 .catch(error => {
-                    console.log(error.response.data);
+                    console.log(error);
                 })
         },
         setRoom(room) {

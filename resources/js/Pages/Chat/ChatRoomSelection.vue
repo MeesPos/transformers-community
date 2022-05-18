@@ -103,7 +103,6 @@ export default {
         }
     },
     created() {
-        console.log(this.currentRoom, 'dasda');
         this.selected = this.currentRoom;
     },
     methods: {
