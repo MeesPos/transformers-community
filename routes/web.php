@@ -38,7 +38,11 @@ Route::get('email-sent', function () {
     ]);
 })->name('auth.email-sent');
 
-Route::get('onboarding', [\App\Http\Controllers\OnboardController::class, 'index'])->name('onboarding');
+Route::get('finish-onboarding', [\App\Http\Controllers\OnboardController::class, 'finish'])->name('onboarding.finish');
+
+Route::middleware(['auth:sanctum', 'verified', 'is_not_blocked'])->group(function () {
+    Route::get('onboarding', [\App\Http\Controllers\OnboardController::class, 'index'])->name('onboarding');
+});
 
 Route::middleware(['auth:sanctum', 'verified', 'is_not_blocked', 'completed_onboarding'])->group(function () {
     Route::get('/chat', function () {
