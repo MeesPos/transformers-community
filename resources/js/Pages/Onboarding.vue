@@ -103,11 +103,6 @@ export default {
                 { name: 4, status: this.getStatus(4) }
             ]
         }
-    },
-    methods: {
-        getStatus(step) {
-            return 'upcoming';
-        }
     }
 }
 </script>
