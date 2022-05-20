@@ -6,7 +6,6 @@
         />
 
         <div>
-<!--            <ProgressBar v-model:currentStep="currentStep" />-->
             <nav class="mt-12 mb-8">
                 <ol role="list" class="flex items-center justify-center">
                     <li v-for="(step, stepIdx) in progressBarSteps" :key="step.name" :class="[stepIdx !== steps.length - 1 ? 'pr-8 sm:pr-36' : '', 'relative']">
@@ -44,12 +43,22 @@
 
         <p class="w-[900px] text-left mx-auto text-md mt-4" v-text="steps[currentStep - 1].description" />
 
-        <video autoplay="autoplay" width="900" height="400" class="mx-auto mt-4">
+        <video v-if="currentStep === 1 || currentStep === 4" autoplay="autoplay" width="900" height="400" class="mx-auto mt-4">
+            <source src="/videos/step-1.mp4" type="video/mp4" />
+        </video>
+
+        <video v-if="currentStep === 2" autoplay="autoplay" width="900" height="400" class="mx-auto mt-4">
             <source src="/videos/step-2.mp4" type="video/mp4" />
         </video>
 
-        <div class="grid grid-cols-2 w-[900px] mx-auto mt-8">
+        <video v-if="currentStep === 3" autoplay="autoplay" width="900" height="400" class="mx-auto mt-4">
+            <source src="/videos/step-3.mp4" type="video/mp4" />
+        </video>
+
+        <div class="grid w-[900px] mx-auto mt-8" :class="currentStep !== 1 && currentStep !== 4 ? 'grid-cols-3' : 'grid-cols-2'">
             <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 rounded-md">Uitleg overslaan</button>
+
+            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 place-self-center rounded-md" v-if="currentStep !== 1" @click="currentStep = currentStep - 1">Terug</button>
 
             <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 place-self-end rounded-md" v-if="currentStep !== 4" @click="currentStep = currentStep + 1">Volgende</button>
         </div>
@@ -57,11 +66,9 @@
 </template>
 
 <script>
-import ProgressBar from "../Components/ProgressBar";
 
 export default {
     name: "Onboarding",
-    components: {ProgressBar},
     data() {
         return {
             currentStep: 1,
@@ -74,7 +81,7 @@ export default {
                 {
                     title: 'Over je gevoelens praten',
                     description: 'Wil graag met iemand privé over een onderwerp praten. Dan kan dat via onze aparte chat pagina. Iedereen die lid is van Transformers Community kan gebruik maken van het chat programma.  Door gebruik te maken van de zoekbalk kan je een nieuwe chat opstarten met iemand.  Je kan foto en berichten naar elkaar sturen.',
-                    video: ''
+                    video: 'step-2.mp4'
                 },
                 {
                     title: 'Menu gebruik van de website',
