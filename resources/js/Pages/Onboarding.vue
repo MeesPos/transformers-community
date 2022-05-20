@@ -56,9 +56,11 @@
         </video>
 
         <div class="grid w-[900px] mx-auto mt-8" :class="currentStep !== 1 && currentStep !== 4 ? 'grid-cols-3' : 'grid-cols-2'">
-            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 rounded-md">Uitleg overslaan</button>
+            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 rounded-md" v-if="currentStep !== 4">Uitleg overslaan</button>
 
-            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 place-self-center rounded-md" v-if="currentStep !== 1" @click="currentStep = currentStep - 1">Terug</button>
+            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 rounded-md" :class="currentStep === 4 ? '' : 'place-self-center'" v-if="currentStep !== 1" @click="currentStep = currentStep - 1">Terug</button>
+
+            <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 rounded-md place-self-end" v-if="currentStep === 4">Uitleg afronden</button>
 
             <button class="bg-brand-aqua font-bold font-montserrat text-lg w-[260px] py-3 place-self-end rounded-md" v-if="currentStep !== 4" @click="currentStep = currentStep + 1">Volgende</button>
         </div>
