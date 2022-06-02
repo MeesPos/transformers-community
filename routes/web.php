@@ -26,7 +26,7 @@ Route::middleware([
     'is_not_blocked'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return redirect()->route('chat');
     })->name('dashboard');
 });
 
