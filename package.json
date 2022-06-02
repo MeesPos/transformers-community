@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "devDependencies": {
+    "dependencies": {
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
@@ -23,9 +23,7 @@
         "postcss-import": "^14.0.2",
         "tailwindcss": "^3.0.0",
         "vue": "^3.2.31",
-        "vue-loader": "^17.0.0"
-    },
-    "dependencies": {
+        "vue-loader": "^17.0.0",
         "@heroicons/vue": "^1.0.6",
         "laravel-echo": "^1.11.7",
         "moment": "^2.29.3",
